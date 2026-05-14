@@ -16,28 +16,28 @@ install-tools: bin/air bin/protoc-gen-go bin/protoc-gen-go-grpc \
                bin/mockery bin/gofumpt
 
 bin/air:
-	GOBIN=$(BIN_DIR) go install github.com/air-verse/air@latest
+	GOBIN=$(BIN_DIR) go install github.com/air-verse/air@v1.52.3
 
 bin/protoc-gen-go:
-	GOBIN=$(BIN_DIR) go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
+	GOBIN=$(BIN_DIR) go install google.golang.org/protobuf/cmd/protoc-gen-go@v1.34.2
 
 bin/protoc-gen-go-grpc:
-	GOBIN=$(BIN_DIR) go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
+	GOBIN=$(BIN_DIR) go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.4.0
 
 bin/golangci-lint:
 	curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(BIN_DIR) v1.59.1
 
 bin/goose:
-	GOBIN=$(BIN_DIR) go install github.com/pressly/goose/v3/cmd/goose@latest
+	GOBIN=$(BIN_DIR) go install github.com/pressly/goose/v3/cmd/goose@v3.21.1
 
 bin/oapi-codegen:
-	GOBIN=$(BIN_DIR) go install github.com/oapi-codegen/oapi-codegen/v2/cmd/oapi-codegen@latest
+	GOBIN=$(BIN_DIR) go install github.com/oapi-codegen/oapi-codegen/v2/cmd/oapi-codegen@v2.4.1
 
 bin/mockery:
-	GOBIN=$(BIN_DIR) go install github.com/vektra/mockery/v2@latest
+	GOBIN=$(BIN_DIR) go install github.com/vektra/mockery/v2@v2.46.3
 
 bin/gofumpt:
-	GOBIN=$(BIN_DIR) go install mvdan.cc/gofumpt@latest
+	GOBIN=$(BIN_DIR) go install mvdan.cc/gofumpt@v0.7.0
 
 clean-tools:
 	rm -rf $(BIN_DIR)
