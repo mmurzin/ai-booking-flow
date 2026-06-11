@@ -1,0 +1,14 @@
+services:
+  app:
+    build:
+      context: ..
+      dockerfile: deployments/Dockerfile
+      args:
+        - GO_VERSION=1.23
+    volumes:
+      - ..:/app
+      - go_mod_cache:/go/pkg/mod
+    command: ["./bin/air", "-c", ".air.toml"]
+
+volumes:
+  go_mod_cache:
